@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill/dist/quill.snow.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Resume Builder</h1>
+        <form id="resume-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+            
+            <label for="education">Education:</label>
+            <div id="education-editor" class="editor"></div>
+            
+            <label for="skills">Skills:</label>
+            <div id="skills-editor" class="editor"></div>
+            
+            <label for="experience">Work Experience:</label>
+            <div id="experience-editor" class="editor"></div>
+            
+            <button type="submit">Generate Resume</button>
+        </form>
+    </div>
+    <div class="container" id="resume-container" style="display:none;">
+        <div class="left-side">
+            <img id="display-picture" alt="Profile Picture" class="profile-picture">
+            <h1 id="display-name"></h1>
+            <p>Email: <a href="#" id="display-email"></a></p>
+            <p>Phone: <a href="#" id="display-phone"></a></p>
+        </div>
+        <div class="right-side">
+            <section>
+                <h2>Education</h2>
+                <div id="display-education" contenteditable="true"></div>
+            </section>
+            <section id="skills-section">
+                <h2>Skills</h2>
+                <div id="display-skills" contenteditable="true"></div>
+            </section>
+            <section>
+                <h2>Work Experience</h2>
+                <div id="display-experience" contenteditable="true"></div>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/quill/dist/quill.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
